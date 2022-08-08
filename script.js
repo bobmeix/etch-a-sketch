@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 
-for (let i = 1; i <= 4096; i++) {
+for (let i = 1; i <= 1024; i++) {
     const div = document.createElement('div');
     div.classList.add('square-div');
     //div.textContent = i;
@@ -8,6 +8,8 @@ for (let i = 1; i <= 4096; i++) {
     div.addEventListener('mouseover', changeBackgroundColor);
 }
 
-function changeBackgroundColor(e){
-    e.target.classList.add('square-div-changed');
+function changeBackgroundColor(e) {
+    if (e.buttons === 1) {
+        e.target.classList.add('square-div-changed');
+    }
 }

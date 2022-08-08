@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne+Mono&display=swap');
+
+* {box-sizing: border-box;}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Syne Mono', monospace;
+    font-weight: 100;
+    margin: 20px 0 50px 0;
+}
+
+.square-div {
+    width: 60px;
+    height: 60px;
+    background-color: #fcf2f0;
+    border: 1px solid black;
+}
+
+.square-div-changed {
+    background-color: #aca2a0;
+}
+
+.container {
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+}

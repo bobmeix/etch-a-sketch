@@ -16,8 +16,8 @@ h1 {
 }
 
 .square-div {
-    width: 60px;
-    height: 60px;
+    width: 6px;
+    height: 6px;
     background-color: #fcf2f0;
     border: 1px solid black;
 }

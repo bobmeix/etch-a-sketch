@@ -3,6 +3,7 @@
 * {box-sizing: border-box;}
 
 body {
+    user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: center;

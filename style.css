@@ -16,8 +16,8 @@ h1 {
 }
 
 .square-div {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background-color: #fcf2f0;
     border: 1px solid black;
 }
@@ -27,7 +27,7 @@ h1 {
 }
 
 .container {
-    width: 960px;
+    width: 512px;
     display: flex;
     flex-wrap: wrap;
 }

@@ -16,19 +16,43 @@ h1 {
     margin: 20px 0 50px 0;
 }
 
-.square-div {
-    width: 16px;
-    height: 16px;
-    background-color: #fcf2f0;
+.background {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 720px;
+    height: 600px;
     border: 1px solid black;
 }
 
-.square-div-changed {
-    background-color: #aca2a0;
+.border {
+    width: 516px;
+    height: 516px;
+    border: 2px solid #aaa;
+
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #aaa;
+}
+
+.control-button {
+    padding: 8px 16px;
+    margin: 20px;
+    background-color: #fcf2f0;
 }
 
 .container {
     width: 512px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.square-div {
+    width: 16px;
+    height: 16px;
+    background-color: #fcf2f0;
+    border: 1px solid #d3d3d3;
 }

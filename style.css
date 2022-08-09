@@ -38,7 +38,7 @@ h1 {
     border: 2px solid #aaa;
 }
 
-.control-button {
+.color-button, .control-button {
     padding: 8px 16px;
     margin: 20px;
     background-color: #fcf2f0;
@@ -55,4 +55,8 @@ h1 {
     height: 16px;
     background-color: #fcf2f0;
     border: 1px solid #d3d3d3;
+}
+
+#gray {
+    background-color: #808080;
 }

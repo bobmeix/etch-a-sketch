@@ -1,11 +1,20 @@
 const border = document.querySelector('.border');
 const container = document.querySelector('.container');
 const clearButton = document.querySelector('#clear');
-const blackButton = document.querySelector('#black');
+clearButton.addEventListener('click', clearContent);
+const colorButtons = document.querySelectorAll('.color-button');
+colorButtons.forEach(button => {
+    button.addEventListener('click', selectDrawColor);
+})
+// const blackButton = document.querySelector('#black');
+// const grayButton = document.querySelector('#gray');
 let drawColor = '#aca2a0';
 let backgroundColor = '#fcf2f0';
+let black = '#000';
+let gray = '#808080';
 
-clearButton.addEventListener('click', clearContent);
+// blackButton.addEventListener('click', selectDrawColor);
+// grayButton.addEventListener('click', select)
 
 function initBoard() {
     for (let i = 1; i <= 1024; i++) {
@@ -30,6 +39,29 @@ function clearContent() {
     square.forEach(square => {
         square.setAttribute('style', `background: ${backgroundColor};`);
     });
+}
+
+function selectDrawColor(color) {
+    if (color.target.id === 'black') {
+        drawColor = black;
+        colorButtons.forEach(button => {
+            if (button.id === 'black') {
+                button.setAttribute('style', `background: ${gray}`);
+            } else {
+                button.setAttribute('style', `background: ${backgroundColor}`);
+            }
+        });
+    } else if (color.target.id === 'gray') {
+        drawColor = '#aca2a0';
+        colorButtons.forEach(button => {
+            if (button.id === 'gray') {
+                button.setAttribute('style', `background: ${gray}`);
+            } else {
+                button.setAttribute('style', `background: ${backgroundColor}`);
+            }
+        });
+    }
+    return drawColor;
 }
 
 initBoard();

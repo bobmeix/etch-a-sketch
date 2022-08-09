@@ -21,7 +21,8 @@ function initBoard() {
         let square = document.createElement('div');
         square.classList.add('square-div');
         container.appendChild(square);
-        square.addEventListener('mouseleave', changeColor);
+        square.addEventListener('mousedown', changeColor);
+        square.addEventListener('mouseenter', changeColor);
         square.addEventListener('contextmenu', e => e.preventDefault());
     }
 }

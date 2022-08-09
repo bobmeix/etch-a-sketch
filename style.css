@@ -8,12 +8,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fcf2f0;
 }
 
 h1 {
     font-family: 'Syne Mono', monospace;
     font-weight: 100;
     margin: 20px 0 50px 0;
+}
+
+p, button {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
 }
 
 .background {
@@ -53,10 +59,11 @@ h1 {
 .square-div {
     width: 16px;
     height: 16px;
-    background-color: #fcf2f0;
+    background-color: #fff;
     border: 1px solid #d3d3d3;
 }
 
 #gray {
-    background-color: #808080;
+    color: #fcf2f0;
+    background-color: #C13E22;
 }

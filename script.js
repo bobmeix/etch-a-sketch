@@ -136,40 +136,30 @@ function generateGrayGradient(e) {
 
     if (actualColor == 230) {
         grayColorComponent = 205;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 205) {
         grayColorComponent = 180;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 180) {
         grayColorComponent = 155;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 155) {
         grayColorComponent = 130;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 130) {
         grayColorComponent = 105;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 105) {
         grayColorComponent = 80;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 80) {
         grayColorComponent = 55;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 55) {
         grayColorComponent = 30;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 30) {
         grayColorComponent = 5;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 5) {
         grayColorComponent = 0;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else if (actualColor == 0) {
         grayColorComponent = 0;
-        return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
     } else {
         return `rgb(230, 230, 230)`;
     }
+    return `rgb(${grayColorComponent}, ${grayColorComponent}, ${grayColorComponent})`;
 }
 
 function toggleGrid() {

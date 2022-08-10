@@ -1,4 +1,3 @@
-const border = document.querySelector('.border');
 const container = document.querySelector('.container');
 const clearButton = document.querySelector('#clear');
 clearButton.addEventListener('click', clearContent);
@@ -8,7 +7,10 @@ const colorButtons = document.querySelectorAll('.color-button');
 colorButtons.forEach(button => {
     button.addEventListener('click', selectDrawColor);
 })
+const select = document.querySelector('.grid-size');
+select.addEventListener('change', initBoard);
 
+let squareSize;
 let rainbowButtonActive = false;
 let gridButtonActive = true;
 let drawColor = '#aca2a0';
@@ -16,10 +18,19 @@ let backgroundColor = '#fcf2f0';
 let black = '#000';
 let brick = '#C13E22';
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 function initBoard() {
-    for (let i = 1; i <= 4096; i++) {
+    removeAllChildNodes(container);
+    squareSize = select.value;
+    for (let i = 1; i <= Math.pow((512 / squareSize), 2); i++) {
         let square = document.createElement('div');
         square.classList.add('square-div');
+        square.setAttribute('style', `width: ${squareSize}px; height: ${squareSize}px;`)
         container.appendChild(square);
         square.addEventListener('mousedown', changeColor);
         square.addEventListener('mouseenter', changeColor);
@@ -29,18 +40,18 @@ function initBoard() {
 
 function changeColor(e) {
     if (e.buttons === 1 && rainbowButtonActive) {
-        e.target.setAttribute('style', `background: ${generateRandomColors()};`);
+        e.target.setAttribute('style', `background: ${generateRandomColors()}; width: ${squareSize}px; height: ${squareSize}px;`);
     } else if (e.buttons === 1) {
-        e.target.setAttribute('style', `background: ${drawColor};`);
+        e.target.setAttribute('style', `background: ${drawColor}; width: ${squareSize}px; height: ${squareSize}px;`);
     } else if (e.buttons === 2) {
-        e.target.setAttribute('style', `background: #fff;`);
+        e.target.setAttribute('style', `background: #fff; width: ${squareSize}px; height: ${squareSize}px;`);
     }
 }
 
 function clearContent() {
     let squares = document.querySelectorAll('.square-div');
     squares.forEach(square => {
-        square.setAttribute('style', `background: #fff;`);
+        square.setAttribute('style', `background: #fff; width: ${squareSize}px; height: ${squareSize}px;`);
         if (!gridButtonActive) {
             square.classList.add('remove-grid');
         }
@@ -107,5 +118,11 @@ function toggleGrid() {
         gridButtonActive = true;
     }
 }
+
+// function getSelectValue(e) {
+//     console.log(e.target.value);
+//     console.log(select.value);
+//     return e.target.value;
+// }
 
 initBoard();

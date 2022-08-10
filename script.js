@@ -26,11 +26,15 @@ function removeAllChildNodes(parent) {
 
 function initBoard() {
     removeAllChildNodes(container);
+    if (!gridButtonActive) {
+        gridButton.setAttribute('style', `color: ${backgroundColor}; background: ${brick}`);
+        gridButtonActive = true;
+    }
     squareSize = select.value;
     for (let i = 1; i <= Math.pow((512 / squareSize), 2); i++) {
         let square = document.createElement('div');
         square.classList.add('square-div');
-        square.setAttribute('style', `width: ${squareSize}px; height: ${squareSize}px;`)
+        square.setAttribute('style', `width: ${squareSize}px; height: ${squareSize}px;`);
         container.appendChild(square);
         square.addEventListener('mousedown', changeColor);
         square.addEventListener('mouseenter', changeColor);

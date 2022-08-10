@@ -7,6 +7,10 @@ const colorButtons = document.querySelectorAll('.color-button');
 colorButtons.forEach(button => {
     button.addEventListener('click', selectDrawColor);
 })
+const colorPicker = document.querySelector('#choose');
+colorPicker.addEventListener('change', selectDrawColor);
+const colorPickerButton = document.querySelector('#color-picker');
+colorPickerButton.addEventListener('click', selectDrawColor);
 const select = document.querySelector('.grid-size');
 select.addEventListener('change', initBoard);
 
@@ -80,7 +84,6 @@ function selectDrawColor(color) {
         });
         return drawColor;
     } else if (color.target.id === 'gray') {
-        //drawColor = 'rgb(155, 155, 155)';
         gradientButtonActive = true;
         rainbowButtonActive = false;
         colorButtons.forEach(button => {
@@ -96,6 +99,17 @@ function selectDrawColor(color) {
         rainbowButtonActive = true;
         colorButtons.forEach(button => {
             if (button.id === 'rainbow') {
+                button.setAttribute('style', `color: ${backgroundColor}; background: ${brick}`);
+            } else {
+                button.setAttribute('style', `color: black; background: ${backgroundColor}`);
+            }
+        });
+    } else if (color.target.id === 'choose' || color.target.id === 'color-picker') {
+        drawColor = color.target.value ? color.target.value : color.target.children[0].value;
+        gradientButtonActive = false;
+        rainbowButtonActive = false;
+        colorButtons.forEach(button => {
+            if (button.id === 'color-picker') {
                 button.setAttribute('style', `color: ${backgroundColor}; background: ${brick}`);
             } else {
                 button.setAttribute('style', `color: black; background: ${backgroundColor}`);

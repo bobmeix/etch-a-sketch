@@ -22,10 +22,6 @@ p, button, select {
     font-size: 16px;
 }
 
-button {
-    border-radius: 1px;
-}
-
 .description p {
     margin: 0;
 }
@@ -34,7 +30,7 @@ button {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 816px;
+    width: 802px;
     height: 600px;
     background-color: #B4B4A0;
     border-radius: 5px;
@@ -83,7 +79,18 @@ button {
 }
 
 #color-picker {
-    padding: 3.7px 16px;
+    display: flex;
+    align-items: center;
+    padding: 3.5px 12px;
     margin: 15px;
     background-color: #fcf2f0;
+}
+
+#choose {
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+#space {
+    visibility: hidden;
 }

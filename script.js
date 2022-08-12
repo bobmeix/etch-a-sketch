@@ -106,6 +106,8 @@ function selectDrawColor(color) {
         });
     } else if (color.target.id === 'choose' || color.target.id === 'color-picker') {
         drawColor = color.target.value ? color.target.value : color.target.children[0].value;
+        // drawColor = color.target.children[0]?.value ?? color.target.value;
+        // console.log(`drawColor: ${drawColor}, color.target.value: ${color.target.value}, ct.children.value: ${color.target.children[0]?.value}`)
         gradientButtonActive = false;
         rainbowButtonActive = false;
         colorButtons.forEach(button => {

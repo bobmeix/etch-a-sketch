@@ -82,7 +82,6 @@ function selectDrawColor(color) {
                 button.setAttribute('style', `color: black; background: ${backgroundColor}`);
             }
         });
-        return drawColor;
     } else if (color.target.id === 'gray') {
         gradientButtonActive = true;
         rainbowButtonActive = false;
